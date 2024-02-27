@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>探索</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}	
+			img {
+			  vertical-align: middle;
+			}
+			
+			.menu{
+					line-height: 60px;
+					padding: 10px;
+					margin: auto;
+					background-color: rgba(112,69,53,1.00);
+					color: aliceblue;
+				}
+				.menu>ul {
+			    line-height: 40px;
+			    margin-left: 200px;
+			    padding: 0;
+			    text-align:center;
+			}
+			
+				.menu li {
+			  display: inline-block;
+			  margin-right: 60px;
+			  width: 100px;
+			  height: 40px;
+			  /* Other style properties */
+			  box-shadow: none; /* First clear the original border style of the li tag */
+			}
+				.menu li a {
+			  		color: aliceblue;
+					text-decoration: none;
+			}
+				.menu li:hover {
+			 
+			  box-shadow: inset 0 0 0 1px #ffffff, /* Inner white dotted border */
+			              inset 0 0 0 1px #000000; /* Outer black solid border */
+			}
+				.no-boxshadow:hover{
+				box-shadow:0 0 0 transparent!important;
+			} 
+			
+			
+			/* Mouseover style */
+			.search-box:hover input[type="text"] {
+			  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+			}
+			
+			.search-box:hover button i {
+			  color: #333;
+			}
+			/*Drop-down menu*/
+			.droplist{
+			            display:none;
+			            overflow:hidden;
+						z-index:3;
+						position:fixed;
+						width:100px;
+				      
+			        }
+			.menu li:hover .droplist{
+			            display: block;  
+			        }
+			.cc3:hover{
+				color: chocolate;
+			}
+			.Tan-cc3 li:hover{
+				color: chocolate;
+			}
+			/*text scroll*/
+			.scrollbox {
+			  overflow: hidden;
+			  position: relative;
+			  background-color: rgba(166, 135, 64, 1.00);
+			}
+			
+			.content {
+			  position: absolute;
+			  
+			
+			  top: 50%;
+			  animation: scrollup 4s linear infinite forwards;
+			}
+			@keyframes scrollup {
+			  from {
+			    transform: translateY(0);
+			  }
+			  to {
+			    transform: translateY(-100%);
+			  }
+			}
+			
+			/*end of scroll*/
+			
+			.container {
+			  position: relative;
+			}
+			
+			.container img {
+			  display: block;
+			 width:100%;
+			  height: auto;
+			}
+			/*Picture mask*/
+			.mask {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width:100%;
+			  height: 100%;
+			  background-color: rgba(0, 0, 0, 0.5);
+			  visibility: hidden;
+			  opacity: 0;
+			  transition: visibility 0s, opacity 0.5s ease-in-out;
+			}
+			
+			.container:hover .mask {
+			  visibility: visible;
+			  opacity: 1;
+			}
+			.mask p {
+			  color: #fff;
+			  font-size: 1.2rem;
+			  text-align: center;
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			}
+			.Tan-cc3 li{
+				display: inline-block;
+				padding-left: 10px;
+			}
+			/*The picture slides out the text introduction from the left*/
+			.img-container {
+			    position: relative;
+			    overflow: hidden;
+			}
+			
+			.intro-container {
+			  position: absolute;
+			  left: 0; /* The initial position is the left side of the picture */
+			  bottom: 0;
+			  background-color: rgba(0, 0, 0, 0.8);
+			  color: #fff;
+			  z-index: 0;
+			  width: 100%;
+			 height: 30%;
+			  transform: translateX(-100%); /* Invisible initially, pan 100% to the left */
+			   transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out; /* Add transition attribute */
+			  opacity: 0;
+			  overflow: hidden;
+			}
+			
+			.img-container:hover .intro-container {
+			  transform: translateX(0); /* On mouseover, pan right 100% */
+			  opacity: 1;
+			}
+			
+			/*The text introduction slides out from the bottom of the picture.*/
+			.img-container2 {
+			    position: relative;
+			    overflow: hidden;
+			}
+			
+			.intro-container2 {
+			  position: absolute;
+			  bottom: 0;
+			  background-color: rgba(0, 0, 0, 0.8);
+			  color: #fff;
+			  width: 100%;
+				height: 40%;
+			  transform: translateY(100%); /* Invisible initially, pan down 100% */
+			   transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out; /* Add transition attribute */
+			  opacity: 0;
+			  overflow: hidden;
+			}
+			
+			.img-container2:hover .intro-container2 {
+			  transform: translateY(0); /* On mouseover, pan right 100% */
+			  opacity: 1;
+			}
+			.grid1{
+				padding-bottom: 160px;
+			}
+			.grid1>div:hover img{
+			transform: scale(1.2)
+			}
+			.grid1>div{
+				overflow: hidden;
+			}
+			.grid1>div img{
+			width: 100%;
+				height: 100%;
+				object-fit: cover;
+				transition: transform 0.3s ease-out;
+			}
+			.bottom{
+				background-color: #ccb562;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="menu">
+			<span style="position:absolute;top:0"><img src="../img/敦煌博物馆网页-01-01.jpg" height="50px" ></span>
+			<ul>
+			   
+			   <li>
+				   <a href="index.html">首页</a>
+				     
+				</li>
+			   <li>
+				   <a href="概览.html">概览</a>
+				   <ul class="droplist">
+						<li><a href="#">莫高窟</a></li>
+						<li><a href="#">麦积山石窟</a></li>
+						<li><a href="#">西千佛洞</a></li>
+					</ul>
+				
+				</li>
+			   <li>
+				   <a href="探索.html">探索</a>
+				   <ul class="droplist">
+						<li><a href="#">镇馆之宝</a></li>
+						<li><a href="#">馆藏精品</a></li>
+						<li><a href="#">文物数据</a></li>
+						
+					</ul>
+				</li>
+			   <li>
+				   <a href="文创.html">文创</a>
+				   <ul class="droplist">
+						<li><a href="#">国宝系列</a></li>
+						<li><a href="#">敦煌日历</a></li>
+						<li><a href="#">书籍邮册</a></li>
+						<li><a href="#">联名文创</a></li>
+					</ul>
+				</li>
+			
+			</ul>
+		</nav>
+		<div style="background-color: rgba(229,198,174,1.00);padding-bottom: 60px">
+		  <p style="text-align: center;font-size: 24px;font-family: 宋体;font-weight:bold;padding:60px" class="cc3"><a>探索敦煌文化</a></p>
+		  <div style="padding-left:20%">
+			   <p style="text-justify: inter-word; max-width: 80%; word-spacing: 10px;">年代:</p>
+			 <ul style="list-style: none;" class="Tan-cc3">
+			  <li>旧石器时代</li>
+			  <li>|</li>
+			  <li>新石器时代</li>
+				 <li>|</li>
+			  <li>魏晋十六国</li>
+				 <li>|</li>
+			  <li>隋朝</li>
+				 <li>|</li>
+			  <li>唐朝</li>
+				 <li>|</li>
+			  <li>五代</li>
+				 <li>|</li>
+			  <li>宋朝</li>
+				  <li>|</li>
+			  <li>元朝</li>
+				 <li>|</li>
+			  <li>明朝</li>
+				 <li>|</li>
+			  <li>清朝</li>
+				  <li>|</li>
+			  <li>中华民国</li>
+			  </ul>
+		    <p style="text-justify: inter-word; max-width: 80%; word-spacing: 10px;">材质:</p>
+			  <ul style="list-style: none;" class="Tan-cc3">
+			  <li>铁器</li>
+			  <li>|</li>
+			  <li>石器</li>
+				 <li>|</li>
+			  <li>陶器</li>
+				 <li>|</li>
+			  <li>铜器</li>
+				 <li>|</li>
+			  <li>木器</li>
+				 <li>|</li>
+			  <li>丝绸</li>
+				 <li>|</li>
+			  <li>纸质</li>
+				  <li>|</li>
+			  <li>金银</li>
+				 <li>|</li>
+			  <li>珠玉</li>
+				 <li>|</li>
+			  <li>砖</li>
+				  <li>|</li>
+			  <li>其他</li>
+				  <li>|</li>
+			  <li>全部</li>
+			  </ul> 
+			  
+		   
+		  </div>
+		</div>
+		
+		<div style="display: grid;grid-template-columns: 30% 20% 30%;justify-content: center;background-color:rgba(112,69,53,1.00);padding-top: 90px;font-size: 24px;font-family:宋体;color:rgba(112,69,53,1.00);font-weight: bold">
+			<div style="height: 100%">	
+				<div class="container" style="height: 100%">
+		    		<img src="../img/敦煌博物馆网页-03_01.jpg" height="100%">
+		  			<div class="mask">
+		    		<p style="font-size:14px">敦煌壁画中有神灵形象(佛、菩萨等)和俗人形象(供作人和故事画中的人物)之分。这两类形象都来源于现实生活,但又各具不同性质。从造型上说．俗人形象富于生活气息，时代特点也表现得更鲜明；而神灵形象则变化较少，想象和夸张成分较多。从衣冠服饰上说，俗人多为中原汉装，神灵则多保持异国衣冠；晕染法也不一样，画俗人多采用中原晕染法，神灵则多为西域凹凸法。所有这些又都随着时代的不同而不断变化。</p>
+		  			</div>
+				</div></div>
+			<div>
+				<div style="height: 33%;text-align:center;padding-top:120px;box-sizing: border-box;background-color: rgba(229,198,174,1.00)">
+					<p class="cc3"><a>西晋朱雀雕刻彩绘砖</a></p>
+				</div>
+				<div style="height: 33%;overflow: hidden;z-index: 2"><img src="../img/敦煌博物馆网页-03_03.jpg" width="100%" style="max-height: 100%"></div>
+				<div style="height: 34%;text-align: center;padding-top: 120px;box-sizing: border-box;background-color: rgba(229,198,174,1.00)">
+					<p class="cc3"><a>敦煌壁画</a></p>
+				</div>
+			</div>
+			<div>
+			    <div>
+					<div class="img-container">
+		  				<img src="../img/敦煌博物馆网页-03_02.jpg" alt="intro-image" width="100%">
+		  			<div class="intro-container">
+		    			<h2>敦煌壁画</h2>
+		    			<p style="font-size: 12px">敦煌壁画，特指中国敦煌石窟内壁的绘画艺术作品，属于世界文化遗产。敦煌壁画总面积5万多平方米，包括敦煌莫高窟、西千佛洞、安西榆林窟等522个石窟历代壁画，规模巨大，技艺精湛，内容丰富，题材广泛。</p>
+		            </div>
+				</div>
+		
+				
+				</div>
+			    <div style="display: flex;background-color: rgba(172,165,80,1.00)">
+				     <div style="width: 50%;height: 100%"></div>
+			      <div style="width: 50%;height: 100%">
+					  
+					 <div class="img-container2">
+		  			<img src="../img/敦煌博物馆网页-03_04.jpg" alt="intro-image" width="100%">
+		  			<div class="intro-container2">
+		    		<h2>敦煌壁画</h2>
+		    		<p style="font-size: 9px">敦煌壁画描绘了神的形象、神的活动、神与神的关系、神与人的关系，寄托良愿，安抚心灵。敦煌壁画具有与世俗绘画不同的审美特征和艺术风格，源于生活，美赏生活；源于艺术，集成艺术；源于世界，分享世界。</p>
+		            </div>
+		
+					</div>
+				</div>
+			</div>
+		</div>
+			</div>
+		<p style="text-align: center;padding: 60px;font-size: 24px;font-family:宋体;background-color:rgba(112,69,53,1.00)" class="cc3"><a>敦煌壁画</a></p>
+		<div style="background-image: url(../images/探索/微信图片_20230602163757.jpg);background-size: cover;height: 800px;display: grid;grid-template-columns:repeat(5,15%);gap:60px;justify-content: center;padding-top: 50px" class="grid1">
+			<div><img src="../img/敦煌博物馆网页-03_05.jpg" ></div>
+			<div><img src="../img/敦煌博物馆网页-03_06.jpg" ></div>
+			<div><img src="../img/敦煌博物馆网页-03_07.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-03_08.jpg" ></div>
+			<div><img src="../img/敦煌博物馆网页-03_09.jpg" ></div>
+			<div><img src="../img/敦煌博物馆网页-03_10.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-03_11.jpg" ></div>
+			<div><img src="../img/敦煌博物馆网页-03_12.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-03_13.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-03_14.jpg"></div>
+		</div>	
+<div class="bottom">
+<img src="../img/敦煌博物馆网页-尾页.jpg" style="width: 60%; margin-left: 20%;"/>
+</div>
+	</body>
+</html>

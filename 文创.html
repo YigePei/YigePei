@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>文创</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}	
+			img {
+			  vertical-align: middle;
+			}
+			.menu{
+				line-height: 60px;
+				padding: 10px;
+				margin: auto;
+				background-color: rgba(112,69,53,1.00);
+				color: aliceblue;
+				}
+				.menu>ul {
+			    line-height: 40px;
+			    margin-left: 200px;
+			    padding: 0;
+			    text-align:center;
+			}
+			
+				.menu li {
+			  display: inline-block;
+			  margin-right: 60px;
+			  width: 100px;
+			  height: 40px;
+			  /* Other style properties */
+			  box-shadow: none; /* First clear the original border style of the li tag */
+			}
+				.menu li a {
+			  		color: aliceblue;
+					text-decoration: none;
+			}
+				.menu li:hover {
+			  box-shadow: inset 0 0 0 1px #ffffff, /* Inner white dotted border */
+			              inset 0 0 0 1px #000000; /* Outer black solid border */
+			}
+				.no-boxshadow:hover{
+				box-shadow:0 0 0 transparent!important;
+			} 
+
+			
+			/* Mouseover style */
+			.search-box:hover input[type="text"] {
+			  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+			}
+			
+			.search-box:hover button i {
+			  color: #333;
+			}
+			/*Drop-down menu*/
+			.droplist{
+			            display:none;
+			            overflow:hidden;
+						z-index:3;
+						position:fixed;
+						width:100px;
+				      
+			        }
+			.menu li:hover .droplist{
+			            display: block;  
+			        }
+					.grid2>div{
+					overflow: hidden;
+					}
+					.grid2>div:hover img{
+						transform: scale(1.2);
+					}
+					.grid2>div img{
+						
+						width: 100%;
+						height: 100%;
+						transition:transform 0.5s ease-out;
+					}
+					.bottom{
+						background: rgba(205,180,98,1.00);
+					}
+					.bottom:hover {
+						 background-color: #ccc;
+					}
+					.bottom1{
+						background: rgba(112,69,53,1.00);color: antiquewhite;padding: 10px;line-height: 40px;
+					}
+					.bottom1:hover{
+						background-color:rgba(195,139,94,1.00);
+					}
+					.cc3 a:hover{
+						color: aliceblue;
+					}
+					.cc3 li:hover{
+						color: rgba(243,124,33,1.00);
+					}
+					
+					body{
+						background-color: rgba(229,198,174,1.00);
+					}
+			.bottom{
+				background-color: #ccb562;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="menu">
+			<span style="position:absolute;top:0"><img src="../img/敦煌博物馆网页-01-01.jpg" height="50px" ></span>
+			<ul>
+			   
+			   <li>
+				   <a href="index.html">首页</a>
+				     
+				</li>
+			   <li>
+				   <a href="概览.html">概览</a>
+				   <ul class="droplist">
+						<li><a href="#">莫高窟</a></li>
+						<li><a href="#">麦积山石窟</a></li>
+						<li><a href="#">西千佛洞</a></li>
+					</ul>
+				
+				</li>
+			   <li>
+				   <a href="探索.html">探索</a>
+				   <ul class="droplist">
+						<li><a href="#">镇馆之宝</a></li>
+						<li><a href="#">馆藏精品</a></li>
+						<li><a href="#">文物数据</a></li>
+						
+					</ul>
+				</li>
+			   <li>
+				   <a href="文创.html">文创</a>
+				   <ul class="droplist">
+						<li><a href="#">国宝系列</a></li>
+						<li><a href="#">敦煌日历</a></li>
+						<li><a href="#">书籍邮册</a></li>
+						<li><a href="#">联名文创</a></li>
+					</ul>
+				</li>
+			
+			</ul>
+		</nav>
+		<div style="display: grid;grid-template-columns: repeat(4,20%);background-image:url(../img/敦煌博物馆网页-04-01.png);background-size: cover;height: 700px;gap:60px;padding-top: 90px;justify-content: center;padding-bottom: 60px" class="grid2">
+			<div><img src="../img/敦煌博物馆网页-04_02.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_03.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_04.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_05.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_06.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_07.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_08.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_09.jpg"></div>
+		</div>
+		<p style="text-align: center;padding:30px;background-color: rgba(229,198,174,1.00);font-size: 24px;font-family: 宋体;font-weight: bold" class="cc3"><a>文创分类</a></p>
+		<div style="text-align: center;padding:30px">
+			<span style="padding:10px;border-radius:20px;font-size: 24px;font-family: 宋体;font-weight: bold" class="bottom">飞天系列</span>
+		</div>
+		<div style="display: grid;grid-template-columns: repeat(4,20%);justify-content: center;gap:60px;grid-template-rows: 300px 60px;" class="grid2">
+			<div><img src="../img/敦煌博物馆网页-04_10.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_11.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_12.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_13.jpg"></div>
+			<div style="text-align: center"><span class="bottom1">美上天手机壳</span></div>
+			<div style="text-align: center"><span class="bottom1">飞天滑板</span></div>
+			<div style="text-align: center"><span class="bottom1">飞天丝巾</span></div>
+			<div style="text-align: center"><span class="bottom1">飞天行李牌</span></div>
+		</div>
+		<div style="text-align: center;padding:30px">
+			<span style="padding:10px;border-radius:20px;font-size: 24px;font-family: 宋体;font-weight: bold" class="bottom">极乐系列</span>
+		</div>
+		<div style="display: grid;grid-template-columns: repeat(4,20%);justify-content: center;gap:60px;grid-template-rows:280px 60px;" class="grid2">
+			<div><img src="../img/敦煌博物馆网页-04_14.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_15.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_16.jpg"></div>
+			<div><img src="../img/敦煌博物馆网页-04_17.jpg"></div>
+			<div style="text-align: center"><span class="bottom1">极乐-鼠标垫</span></div>
+			<div style="text-align: center"><span class="bottom1">极乐-笔记本</span></div>
+			<div style="text-align: center"><span class="bottom1">极乐-地垫</span></div>
+			<div style="text-align: center"><span class="bottom1">极乐-胶带</span></div>
+		</div>
+		<p style="text-align: center;padding:30px;background-color: rgba(229,198,174,1.00);font-size: 24px;font-family: 宋体;font-weight: bold" class="cc3"><a>推荐文创</a></p>
+		<div><img src="../img/敦煌博物馆网页-04_18.jpg" width="100%"></div>
+<div class="bottom">
+<img src="../img/敦煌博物馆网页-尾页.jpg" style="width: 60%; margin-left: 20%;"/>
+</div>
+	</body>
+</html>
